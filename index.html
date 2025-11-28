@@ -7,9 +7,19 @@
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <h1>My Library</h1>
+        <header class="header">
+            <div class="header-content">
+                <h1>Avoredo</h1>
+                <p class="subtitle">Every book is a seed; Plant your library</p>
+            </div>
+        </header>
 
-        <button id="newBookBtn">+ New Book</button>
+        <main class="main-content">
+            <div class="controls">
+                <button id="newBookBtn" class="btn-primary">+ New Book</button>
+                <div id="bookContainer" class="book-grid"></div>
+            </div>
+        </main>
 
         <dialog id="book-dialog">
             <form action="" id="book-form">
@@ -29,8 +39,6 @@
                 </div>
             </form>
         </dialog>
-
-        <div id="bookContainer"></div>
 
         <script src="main.js"></script>
     </body>
