@@ -3,13 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Avoredo - Your Library Companion</title>
+        <title>Livra - Your Library Companion</title>
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
         <header class="top-header">
             <div class="header-left">
-                <h1 class="site-logo">Avoredo</h1>
+                <h1 class="site-logo">Livra</h1>
             </div>
 
             <div class="header-center">
@@ -41,12 +41,183 @@
             </div>
         </header>
 
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <!-- All Books -->
+                <div class="nav-section">
+                    <h3 class="nav-section-title">My Library</h3>
+                    <ul class="nav-list">
+                        <li>
+                            <a href="#" class="nav-link" data-view="all-books">
+                                All Books
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="nav-link"
+                                data-view="currently-reading"
+                            >
+                                Currently Reading
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="nav-link"
+                                data-view="want-to-read"
+                            >
+                                Want To Read
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" data-view="finished">
+                                Finished
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Collections/Lists -->
+                <div class="nav-section">
+                    <h3 class="nav-section-title">Collections</h3>
+                    <ul class="nav-list">
+                        <li>
+                            <a href="#" class="nav-link" data-view="genres">
+                                By Genre
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" data-view="tags">
+                                Tags
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" data-view="custom">
+                                Custom Lists
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Discover -->
+                <div class="nav-section">
+                    <h3 class="nav-section-title">Discovery</h3>
+                    <ul class="nav-list">
+                        <li>
+                            <a href="#" class="nav-link" data-view="browse">
+                                Browse
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="nav-link"
+                                data-view="recommendations"
+                            >
+                                Recommendations
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Activity -->
+                <div class="nav-section">
+                    <h3 class="nav-section-title">Activity</h3>
+                    <ul class="nav-list">
+                        <li>
+                            <a href="#" class="nav-link" data-view="activity">
+                                Activity
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" data-view="stats">
+                                Statistics
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Journal/Notes -->
+                <div class="nav-section">
+                    <h3 class="nav-section-title">Notes</h3>
+                    <ul class="nav-list">
+                        <li>
+                            <a href="#" class="nav-link" data-view="journal">
+                                Reading Journal
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" data-view="bookmarks">
+                                Bookmarks
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" data-view="highlights">
+                                Highlights
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
         <main class="main-content">
-            <div class="controls">
-                <button id="newBookBtn" class="btn-primary">+ New Book</button>
+            <section class="current-reading-section">
+                <h2 class="section-title">Currently Reading</h2>
+                <div
+                    id="currentlyReadingContainer"
+                    class="currently-reading-card"
+                >
+                    <p class="empty-state">
+                        Start reading a book to see it here!
+                    </p>
+                </div>
+            </section>
+
+            <section class="recent-books-section">
+                <div class="section-header">
+                    <h2 class="section-title">Recent Books</h2>
+                    <button class="view-all-btn">View All →</button>
+                </div>
                 <div id="bookContainer" class="book-grid"></div>
-            </div>
+            </section>
         </main>
+
+        <dialog id="book-dialog" class="book-dialog">
+            <form id="book-form" class="book-form">
+                <h2>Add a New Book</h2>
+
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="author" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="pages">Pages</label>
+                    <input
+                        type="number"
+                        id="pages"
+                        name="pages"
+                        required
+                        min="1"
+                    />
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="read" name="read" />
+                    <label for="read">I've finished this book</label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Add Book</button>
+                    <button type="button" id="cancelBtn" class="btn-secondary">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </dialog>
 
         <dialog id="book-dialog">
             <form action="" id="book-form">
