@@ -3,14 +3,41 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Avoredo - Your Library Companion</title>
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <header class="header">
-            <div class="header-content">
-                <h1>Avoredo</h1>
-                <p class="subtitle">Every book is a seed; Plant your library</p>
+        <header class="top-header">
+            <div class="header-left">
+                <h1 class="site-logo">Avoredo</h1>
+            </div>
+
+            <div class="header-center">
+                <div class="search-container">
+                    <input
+                        type="search"
+                        id="globalSearch"
+                        placeholder="Search books, authors, genres..."
+                        class="search-input"
+                    />
+                    <button class="search-btn">Search</button>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <button class="icon-btn" id="addBookBtn" title="Add New Book">
+                    +
+                </button>
+                <button class="profile-btn" id="profileBtn">
+                    <img
+                        src="./profile-pic.png"
+                        alt="User Profile Picture"
+                        class="profile-pic"
+                    />
+                </button>
+                <button class="icon-btn" id="settingsBtn" title="Settings">
+                    O
+                </button>
             </div>
         </header>
 
